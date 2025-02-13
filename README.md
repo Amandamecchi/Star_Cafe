@@ -23,18 +23,12 @@ src/
 
 ##📖 Endpoints
 # - GET/menu - retorna o cardápio da cafeteria
-cabeçalhos:
-Respostas
+
 
 # - POST/order - Permite que um cliente faça um pedido
-Cabeçalhos:
-Corpo da requisição:
-Respostas
+
 
 # - GET /order/:id - Consulta o status de um pedido.
-Cabeçalhos:
-Respostas:
 
 # - DELETE /order/:id - Cancela um pedido (caso ainda não tenha sido preparado).
-Cabeçalhos:
-Respostas:
+
