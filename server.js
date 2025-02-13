@@ -5,13 +5,17 @@ const cors = require("cors");
 const cafeRoutes = require("./routes/cafeRoutes")
 
 const app = express();
+const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
 
-app.use("/cafes/cafeRoutes");
+app.use("/api", cafeRoutes);
 
-const PORT = process.env.PORT || 3000;
+app.get("/", (req, res) => {
+    res.send("E amo BackEnd!");
+});
+
 app.listen(PORT, () => {
     console.log(`Servidor rodando em http://localhost:${PORT}`);
 });
