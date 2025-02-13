@@ -2,23 +2,28 @@ const Cafe = require("./Cafe");
 
 class ListaCafes{
     constructor(){
-        this.cafe = [];
+        this.cafes = [];
         this.proximoId = 1;
     }
-    adicionarCafe(id, cafe, tipo, acompanhamento){
+
+    adicionarCafe(cafe, tipo, acompanhamento){
         const novoCafe = new Cafe(this.proximoId++, cafe, tipo, acompanhamento);
         this.cafe.push(novoCafe);
         return novoCafe;
     }
+
     ListaCafes(){
-        return this.livros;
+        return this.cafes;
     }
+
     buscarCafes(){
         return this.cafes;
     }
+
     buscarCafePorId(id){
         return this.cafes.find(cafe => cafe.id === id);
     }
+
     removerCafe(id){
         const index = this.cafes.findIndex(cafe => cafe.id === id);
         if (index !== -1){
@@ -27,6 +32,7 @@ class ListaCafes{
         }
         return null;
     }
+    
     updateCafe(id, updateData){
         const cafe = this.buscarCafePorId(id);
         if (!cafe) return null;

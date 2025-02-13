@@ -1,9 +1,9 @@
 class Cafe {
     constructor(id, cafe, tipo, acompanhamento){
-        this.id;
-        this.cafe;
-        this.tipo;
-        this.acompanhamento;
+        this.id = id;
+        this.cafe = cafe;
+        this.tipo = tipo;
+        this.acompanhamento = acompanhamento;
     }
 }
 
