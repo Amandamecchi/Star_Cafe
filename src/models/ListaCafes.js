@@ -1,20 +1,16 @@
+const Cafe = require("./Cafe");
 class ListaCafes{
     constructor(){
         this.cafes = [];
-        
     }
 
     adicionarCafe(tipo, tamanho, acompanhamento){
-        const novoCafe = new Cafe(this.proximoId++,  tipo, tamanho, acompanhamento);
+        const novoCafe = new Cafe(tipo, tamanho, acompanhamento);
         this.cafes.push(novoCafe);
         return novoCafe;
     }
 
     ListarCafes(){
-        return this.cafes;
-    }
-
-    buscarCafes(){
         return this.cafes;
     }
 

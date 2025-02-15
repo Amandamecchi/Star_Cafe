@@ -1,41 +1,40 @@
 //const Cafe = require("../models/Cafe");
 const ListaCafes = require("../models/ListaCafes");
-
+const listaCafes = new ListaCafes();
 //const listaMenu = new ListaCafes();
 
 //const cafe1 = new Cafe("Com leite", "médio", "pão na chapa");
 //const cafe2 = new Cafe("Expresso", "pequeno", "torrada");
 
-const listaPedido = new ListaCafes();
-
-const criarCafes = () => {
-    listaCafes.adicionarCafe("Com leite", "médio", "pão na chapa");
-    listaCafes.adicionarCafe("Expresso", "pequeno", "torrada");
-};
-
 const listarCafes = (req, res) => {
-    const cafes = ListaCafes.listarCafes();
-    res.json(cafes);
-}
+    res.json(listaCafes.listarCafes());
+};
 
 const adicionarCafe = (req, res) => {
-    const {cafe, tipo, acompanhamento} = req.body;
-    if(!cafe || !tipo || !acompanhamento){
+    const {tipo, tamanho, acompanhamento} = req.body;
+    if(!tipo || !tamanho || !acompanhamento){
        return res.status(400).json({erro: "todos os campos são obrgatórios"});
-    };
+    }
 
-   const novoCafe = listaCafes.adicionarCafe(cafe, tipo, acompanhamento);
-   return res.status(201).json(novoCafe);
+   const novoCafe = listaCafes.adicionarCafe(tipo, tamanho, acompanhamento);
+   res.status(201).json(novoCafe);
 };
+//const listaPedido = new ListaCafes();
 
-const buscarCafesPorId = (req, res) => {
-    const {id} = req.params;
-    const cafe = listaCafes.buscarCafePorId(parseInt(id, 10));
+//const criarCafes = () => {
+   // listaPedido.adicionarCafe("Com leite", "médio", "pão na chapa");
+   // listaPedido.adicionarCafe("Expresso", "pequeno", "torrada");
+//};
+
+
+const buscarCafePorId = (req, res) => {
+    const { id } = req.params;
+    const cafe = listaCafes.buscarCafePorI(id);
     if (cafe){
        return res.json(cafe);
-    } else{
-         return res.status(404).json({erro: 'cafe não encontrado'})
-    }
+    } 
+        res.status(404).json({erro: 'cafe não encontrado'});
+    
   //  const cafe = listaCafes.buscarCafePorId(parseInt(req.params.id));
    // if (!cafe) {
    //     return res.status(404).json({ erro: "Café não encontrado." });
@@ -45,12 +44,12 @@ const buscarCafesPorId = (req, res) => {
 
 const removerCafe = (req, res) => {
     const { id } = req.params;
-    const cafeRemovido = listaCafes.removerCafe(parseInt(id, 10));
+    const cafeRemovido = listaCafes.removerCafe(id);
     if (cafeRemovido){
-    return res.json({mensagem: "cafeRemovido"});
-    } else{
-        return res.status(404).json({ erro: 'Café não encontrado'});
-    }
+    return res.json({mensagem: "cafe removido com sucesso"});
+    } 
+    res.status(404).json({ erro: 'Café não encontrado'});
+    
  };
 
 
@@ -61,12 +60,11 @@ const removerCafe = (req, res) => {
     //res.json({ mensagem: "Café removido com sucesso" });
 
 //p criar os coffes iniciais
-criarCafes();
 
 module.exports = {
     listarCafes,
     adicionarCafe,
-    buscarCafesPorId, 
+    buscarCafePorId, 
     removerCafe
 };
 
