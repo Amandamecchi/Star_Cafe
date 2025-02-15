@@ -1,10 +1,10 @@
 const express = require("express");
 const router = express.Router();
-const cafeController = require("../controllers/cafeController");
+const cafeController = require("../controllers/cafeController.js");
 
-router.get("/", cafeController.listarCafes);
-router.post("/", cafeController.adicionarCafe);
-router.get("/:id", cafeController.buscarCafePorId);
-router.delete("/:id", cafeController.removerCafe);
+router.get("/", cafeController.getAllCafes);
+router.post("/", cafeController.addCafe);
+router.get("/:id", cafeController.updateCafe);
+router.delete("/:id", cafeController.deleteCafe);
 
 module.exports = router;
