@@ -1,20 +1,20 @@
-class ListaCafes{
-    constructor(){
+class ListaCafes {
+    constructor() {
         this.cafes = [];
     }
 
-    addCafe(cafe){
-      this.cafes.push(cafe);
+    addCafe(cafe) {
+        this.cafes.push(cafe);
     }
 
-    getAllCafes(){
+    getAllCafes() {
         return this.cafes;
     }
 
-    getCafeById(id){
+    getCafeById(id) {
         const cafe = this.cafes.find((cafe) => cafe.id == id);
         if (!cafe) {
-            throw new Error("cafe não encontrada");
+            throw new Error("Café não encontrado");
         }
         return cafe;
     }
