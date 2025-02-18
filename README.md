@@ -36,8 +36,15 @@ json
 Copiar
 Editar
 
-{"message":"Criado com sucesso","cafe":{"id":"233bdcfb-c8ad-440a-9111-ae3a8a03e4ba","tipo":"Café Expresso","tamanho":"Grande","acompanhamento":"Biscoito"}}``````
-
+{
+    "message": "Criado com sucesso",
+    "cafe": {
+        "id": "233bdcfb-c8ad-440a-9111-ae3a8a03e4ba",
+        "tipo": "Café Expresso",
+        "tamanho": "Grande",
+        "acompanhamento": "Biscoito"
+    }
+}
 Códigos de Status:
 200 Created: 
     "message": "Criado com sucesso".
