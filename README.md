@@ -3,11 +3,12 @@ Bem-vindo à StarCafé API, um sistema desenvolvido para gerenciar pedidos e o c
 
 ## Endpoints
 ## 📝 1. Obter o Menu
+``````
 Método: GET
 URL: /api/cafes
 Códigos de Status:
 200 OK
-``````[
+[
     {
         "id": "87dcc926-59db-4727-849e-5a7500c4ba9a",
         "tipo": "Com leite",
@@ -22,7 +23,9 @@ Códigos de Status:
     }
 ]
 ``````
+---
 ## 📝 2. Fazer um Pedido
+``````
 Método: POST
 URL: /order
 Cabeçalhos:
@@ -32,14 +35,17 @@ Corpo da Requisição (JSON):
 json
 Copiar
 Editar
-``````
+
 {"message":"Criado com sucesso","cafe":{"id":"233bdcfb-c8ad-440a-9111-ae3a8a03e4ba","tipo":"Café Expresso","tamanho":"Grande","acompanhamento":"Biscoito"}}``````
 
 Códigos de Status:
 200 Created: 
     "message": "Criado com sucesso".
+``````
+---
 
 ## 📝 3. Consultar Pedido po Id
+``````
 Método: GET
 URL: /order/:id
 Códigos de Status:
@@ -50,8 +56,12 @@ Códigos de Status:
     "tamanho": "Pequeno",
     "acompanhamento": "Pão de Queijo"
 }
+``````
+---
+
 
 ## 📝 4. Cancelar Pedido
+``````
 Método: DELETE
 URL: /api/cafes/87dcc926-59db-4727-849e-5a7500c4ba9a
 Códigos de Status:
@@ -60,6 +70,7 @@ Códigos de Status:
     "message": "cafe deletada com sucesso",
     "cafe": "87dcc926-59db-4727-849e-5a7500c4ba9a"
 }
+``````
 
 
 
