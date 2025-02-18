@@ -7,7 +7,7 @@ Método: GET
 URL: /api/cafes
 Códigos de Status:
 200 OK
-[
+``````[
     {
         "id": "87dcc926-59db-4727-849e-5a7500c4ba9a",
         "tipo": "Com leite",
@@ -21,7 +21,7 @@ Códigos de Status:
         "acompanhamento": "Pão de Queijo"
     }
 ]
-
+``````
 ## 📝 2. Fazer um Pedido
 Método: POST
 URL: /order
